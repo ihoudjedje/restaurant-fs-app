@@ -3,10 +3,11 @@ import { AppController } from './app.controller';
 import { ItemsController } from './items/items.controller';
 import { AppService } from './app.service';
 import { ItemsService } from './items/items.service';
+import { ShoppingCartController } from './shopping-cart/shopping-cart.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController, ItemsController],
+  controllers: [AppController, ItemsController, ShoppingCartController],
   providers: [AppService, ItemsService],
 })
 export class AppModule {}
