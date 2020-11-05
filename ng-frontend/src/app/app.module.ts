@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './auth/header/header.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [AppComponent, ItemsComponent, HeaderComponent],
