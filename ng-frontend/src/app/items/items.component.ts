@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item.interface';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-items',
@@ -21,7 +22,10 @@ export class ItemsComponent implements OnInit {
   itemSubmitted = false;
   itemForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+  ) {}
 
   addToCart() {
     window.alert('Added');
@@ -46,5 +50,13 @@ export class ItemsComponent implements OnInit {
     } else {
       this.items.push(this.itemForm.value);
     }
+  }
+
+  isAdmin() {
+    return this.authService.isAdmin();
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 }

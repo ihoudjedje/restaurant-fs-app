@@ -14,7 +14,11 @@
       <td>${{ item.price }}</td>
       <!--Write it's price in a column-->
       <td>
-        <button class="btn btn-secondary" (click)="addToCart()">
+        <button
+          class="btn btn-secondary"
+          (click)="addToCart()"
+          [disabled]="!isAuthenticated()"
+        >
           Add to shopping cart
         </button>
       </td>
@@ -22,7 +26,7 @@
   </tbody>
 </table>
 
-<div>
+<div *ngIf="isAdmin()">
   <h3 class="col-md-12">Add a new Item</h3>
   <form class="form-inline" (submit)="addNewItem()" [formGroup]="itemForm">
     <div class="col-auto">
